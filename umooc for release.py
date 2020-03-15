@@ -38,7 +38,6 @@ class umooc:
                 self.cookies = res1.cookies
                 self.login_status = 1
                 print("login success")
-                print(res2.text)
                 #return True
             else:
                 self.cookies = {}
@@ -55,7 +54,6 @@ class umooc:
             'id': "自行抓包获取，在包中扫码签到时显示ID，在抓包课程活动时显示为parentID",
         }
         res3 = requests.post(sign_url, headers=self.headers, params=params, timeout=5)
-        print(res3.text)
         requests.get('https://sc.ftqq.com/你的SCKEY.send',params=dict(text='自己瞅眼签到成功没.', desp=res3.text))
 
 example = umooc()
