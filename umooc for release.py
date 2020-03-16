@@ -51,7 +51,7 @@ class umooc:
         sign_url = "http://e-learning.cqmu.edu.cn/mobile/此处输入签到二维码使用其他软件扫描后的链接"
         params = {
             'context': "自行获取填写，这个是课程ID，即你访问课程时URL中的courseId",
-            'id': "自行抓包获取，在包中扫码签到时显示ID，在抓包课程活动时显示为parentID",
+            'id': "此处为二维码的inclassid",
         }
         res3 = requests.post(sign_url, headers=self.headers, params=params, timeout=5)
         requests.get('https://sc.ftqq.com/你的SCKEY.send',params=dict(text='自己瞅眼签到成功没.', desp=res3.text))
